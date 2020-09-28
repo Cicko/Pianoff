@@ -16,15 +16,15 @@ export interface IMenuItem {
 
 export const MenuItems: Array<IMenuItem> = [
     {
-        title: 'header.menuItem.home',
+        title: 'pages.home',
         route: '/'
     },
     {
-        title: 'header.menuItem.blog',
+        title: 'pages.blog',
         route: '/blog'
     },
     {
-        title: 'header.menuItem.discover',
+        title: 'pages.discover',
         route: '/discover'
     }
 ]
