@@ -6,6 +6,7 @@ import * as React from 'react'
 import { Input, Menu } from 'semantic-ui-react';
 import { MenuItemProps } from 'semantic-ui-react/dist/commonjs/collections/Menu/MenuItem';
 import { IMenuItem, MenuItems } from './HeaderMenuConfig'
+import TranslationManager from '../../../../lib/services/TranslationManager/TranslationManager';
 
 export interface HeaderMenuProps {
     activeItem: string
@@ -14,10 +15,11 @@ export interface HeaderMenuProps {
 
 const HeaderMenu: React.FC<HeaderMenuProps> = (props: HeaderMenuProps) => {
     const { activeItem, onMenuItemClick } = props
+    const t = React.useContext(TranslationManager.Context) as Function
 
     const buildMenuItem = (item: IMenuItem) =>
         <Menu.Item
-            name={item.title}
+            name={t(item.title)}
             active={activeItem === 'home'}
             onClick={onMenuItemClick}
         />
@@ -30,7 +32,7 @@ const HeaderMenu: React.FC<HeaderMenuProps> = (props: HeaderMenuProps) => {
                 <Input icon='search' placeholder='Search...' />
             </Menu.Item>
             <Menu.Item
-                name='logout'
+                name={t('common.logout')}
                 active={activeItem === 'logout'}
                 onClick={onMenuItemClick}
             />

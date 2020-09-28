@@ -1,8 +1,7 @@
 import * as React from 'react'
-import { Container, Input, Menu } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 import { MenuItemProps } from 'semantic-ui-react/dist/commonjs/collections/Menu/MenuItem';
 import HeaderMenu from './components/HeaderMenu';
-import { act } from 'react-dom/test-utils';
 
 export interface HeaderProps {
     activeItem: string
