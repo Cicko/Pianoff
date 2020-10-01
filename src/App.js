@@ -1,6 +1,7 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom'
 import './App.css';
-import {Header} from "./app/containers";
+import {Body, Header} from "./app/containers";
 import { TranslationManager } from './lib/services'
 
 function App() {
@@ -8,13 +9,16 @@ function App() {
     const language = 'english'
 
     return (
-    <div className="App">
-        <TranslationManager.Context.Provider
-            value={TranslationManager.t(language)}
-        >
-            <Header activeItem="home"/>
-        </TranslationManager.Context.Provider>
-    </div>
+        <Router>
+            <div className="App">
+                <TranslationManager.Context.Provider
+                    value={TranslationManager.t(language)}
+                >
+                    <Header activeItem="home"/>
+                    <Body/>
+                </TranslationManager.Context.Provider>
+            </div>
+        </Router>
 );
 }
 

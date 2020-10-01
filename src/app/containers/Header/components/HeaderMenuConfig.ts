@@ -10,21 +10,6 @@
  */
 
 export interface IMenuItem {
-    title: string,
+    title?: string,
     route: string
 }
-
-export const MenuItems: Array<IMenuItem> = [
-    {
-        title: 'pages.home',
-        route: '/'
-    },
-    {
-        title: 'pages.blog',
-        route: '/blog'
-    },
-    {
-        title: 'pages.discover',
-        route: '/discover'
-    }
-]

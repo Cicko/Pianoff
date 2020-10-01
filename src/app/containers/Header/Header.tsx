@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { Container } from 'semantic-ui-react'
-import { MenuItemProps } from 'semantic-ui-react/dist/commonjs/collections/Menu/MenuItem';
 import HeaderMenu from './components/HeaderMenu';
+import { useRouter } from '../../../lib/utils/hooks';
+import { IMenuItem } from './components/HeaderMenuConfig';
 
 export interface HeaderProps {
     activeItem: string
@@ -9,9 +10,10 @@ export interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     const activeItem = props.activeItem || 'home' // TODO: activeItem modification should modify redux store so the body adapts.
+    const router = useRouter()
 
-    const onMenuItemClick = (event: React.MouseEvent<HTMLAnchorElement>, data: MenuItemProps) => void {
-
+    const onMenuItemClick = (item: IMenuItem) => () =>  {
+        router.push(item.route)
     }
 
     return (

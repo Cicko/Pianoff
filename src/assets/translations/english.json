@@ -1,6 +1,8 @@
 {
   "pages.home": "Home",
+  "pages.profile": "Profile",
   "pages.blog": "Blog",
+  "pages.settings": "Settings",
   "pages.discover": "Discover",
   "common.settings": "Settings",
   "common.logout": "Logout"

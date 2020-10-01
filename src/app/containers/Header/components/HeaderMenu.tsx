@@ -5,12 +5,13 @@
 import * as React from 'react'
 import { Input, Menu } from 'semantic-ui-react';
 import { MenuItemProps } from 'semantic-ui-react/dist/commonjs/collections/Menu/MenuItem';
-import { IMenuItem, MenuItems } from './HeaderMenuConfig'
+import { IMenuItem } from './HeaderMenuConfig'
+import pages from '../../../../pages'
 import TranslationManager from '../../../../lib/services/TranslationManager/TranslationManager';
 
 export interface HeaderMenuProps {
     activeItem: string
-    onMenuItemClick: (event: React.MouseEvent<HTMLAnchorElement>, data: MenuItemProps) => void
+    onMenuItemClick: (item: IMenuItem) => (event: React.MouseEvent<HTMLAnchorElement>, data: MenuItemProps) => void
 }
 
 const HeaderMenu: React.FC<HeaderMenuProps> = (props: HeaderMenuProps) => {
@@ -21,10 +22,12 @@ const HeaderMenu: React.FC<HeaderMenuProps> = (props: HeaderMenuProps) => {
         <Menu.Item
             name={t(item.title)}
             active={activeItem === 'home'}
-            onClick={onMenuItemClick}
+            onClick={onMenuItemClick(item)}
         />
 
-    const LeftMenu = MenuItems.map(buildMenuItem)
+    const LeftMenu = pages
+        .filter(page => !page.hideFromHeader)
+        .map(buildMenuItem)
 
     const RightMenu =
         <Menu.Menu position='right'>
@@ -34,7 +37,7 @@ const HeaderMenu: React.FC<HeaderMenuProps> = (props: HeaderMenuProps) => {
             <Menu.Item
                 name={t('common.logout')}
                 active={activeItem === 'logout'}
-                onClick={onMenuItemClick}
+                onClick={onMenuItemClick({ route: '/logout' })}
             />
         </Menu.Menu>
 

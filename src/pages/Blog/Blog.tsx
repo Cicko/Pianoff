@@ -10,7 +10,7 @@ export interface BlogProps {
 
 const Blog: React.FC<BlogProps> = (props: BlogProps) => {
 
-    return null
+    return  <div>BLOG PAGE</div>
 }
 
 export default Blog
