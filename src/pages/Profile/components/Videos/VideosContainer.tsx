@@ -6,16 +6,17 @@ import * as React from 'react'
 import { Grid, Header, Image, Loader, Segment } from 'semantic-ui-react'
 
 export interface VideosContainerProps {
-
+    videos: Array<any> // TODO: VideoInterface (name, src, comments, etc...) to type is Array<VideoInterface>
 }
 
 const VideosContainer: React.FC<VideosContainerProps> = (props: VideosContainerProps) => {
+    const { videos } = props
 
     return (
         <Segment>
             <Header>VIDEOS</Header>
             <Grid relaxed columns={4}>
-                {Array.from({ length: 20 }).map(el =>
+                {videos.map(el =>
                     <Grid.Column>
                         <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
                     </Grid.Column>
