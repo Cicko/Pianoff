@@ -1,5 +1,6 @@
 import Home from './Home/Home'
 import Profile from './Profile/Profile'
+import Discover from './Discover/Discover'
 import Blog from './Blog/Blog'
 import Settings from './Settings/Settings'
 
@@ -29,6 +30,11 @@ const pages: Array<IPages> = [
         title: 'pages.profile',
         route: '/profile',
         Component: Profile
+    },
+    {
+        title: 'pages.discover',
+        route: '/discover',
+        Component: Discover
     },
     {
         title: 'pages.blog',
