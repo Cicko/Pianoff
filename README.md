@@ -20,9 +20,15 @@ Students will be able to:
  - Receive notifications from their subscribed accounts
  - Publish videos/learning progresses to receive feedback from teachers, or even to simply have a well organized repertoire portfolio
  - 
+
+## Cool resources
+### For design
+ - [3D menu flip for mobile](https://dribbble.com/shots/4773637-3D-flip-menu)
  
  
  ## TODO
   - 
  
-          
+         
+         
+         
