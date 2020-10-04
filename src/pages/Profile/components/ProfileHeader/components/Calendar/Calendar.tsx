@@ -23,8 +23,17 @@ const Calendar: React.FC<CalendarProps> = (props: CalendarProps) => {
             title: t('calendar.available'),
             start: moment('06-10-2020 17:00', 'DD-MM-YYYY hh:mm').toDate(),
             end: moment('08-10-2020 21:00', 'DD-MM-YYYY hh:mm').toDate(),
+            resource: 'https://youtube.com'
         }
     ]
+
+    const onSelectSlot = (slotInfo) => {
+        console.log(slotInfo)
+    }
+
+    const onSelectEvent = (event) => {
+        console.log(event)
+    }
 
     return (
         <BigCalendar
@@ -33,6 +42,9 @@ const Calendar: React.FC<CalendarProps> = (props: CalendarProps) => {
             startAccessor="start"
             endAccessor="end"
             style={{ height: 500 }}
+            selectable={true}
+            onSelectSlot={onSelectSlot}
+            onSelectEvent={onSelectEvent}
         />
     )
 }
