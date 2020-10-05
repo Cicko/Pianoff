@@ -27,7 +27,10 @@ Students will be able to:
  
  
  ## TODO
-  - 
+  - Find designer (or try to design it by myself)
+  - Design a market strategy
+  - Have a presentational website (promotional video + newsletters registration)
+  - Finish implementation of a functional prototype with mock data. (Only backend should be missing and some extra features)
  
          
          
