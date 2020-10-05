@@ -3,25 +3,33 @@
  * Created on 04.10.20 - 11:07
  **/
 import * as React from 'react'
-import { Grid, Header, Image, Loader, Segment } from 'semantic-ui-react'
+import { Grid, Header, Image, Loader, Segment, Message } from 'semantic-ui-react'
+
+export interface VideoInterface {
+
+}
 
 export interface VideosContainerProps {
-    videos: Array<any> // TODO: VideoInterface (name, src, comments, etc...) to type is Array<VideoInterface>
+    loading: boolean
+    error: Error
+    data: Array<VideoInterface> // TODO: VideoInterface (name, src, comments, etc...) to type is Array<VideoInterface>
 }
 
 const VideosContainer: React.FC<VideosContainerProps> = (props: VideosContainerProps) => {
-    const { videos } = props
+    const { data, loading, error } = props
 
     return (
         <Segment>
+            <Loader loading={loading}/>
             <Header>VIDEOS</Header>
             <Grid relaxed columns={4}>
-                {videos.map(el =>
+                {data.map(el =>
                     <Grid.Column>
                         <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
                     </Grid.Column>
                 )}
             </Grid>
+            {!!error && <Message error>{error.message}</Message>}
         </Segment>
     )
 }
