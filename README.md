@@ -10,7 +10,7 @@ Teachers will be able to:
  - Users and students have the possibility to subscribe to a teacher, to have access to his premium content
  - Publish lessons that users/students can buy or subscribers can have access to
  - Have a customizable Calendar with a schedule specifying possible slots for (online/in person) lessons, concerts, master classes, events, etc..
- - Receive requests from users/students to review a concert video for a feedback
+ - Receive requests from users/students to review a video for a feedback
  - Have a list of own repertoire, to facilitate users to filter teachers by composers/pieces
  - Sell learning material such musical sheets, or products
  
