@@ -1,5 +1,5 @@
-# Piano Teachers
-Piano teachers is a social network for musicians to revolutionize education to a new generation. The aim of this project is to provide immense benefits to students and
+# Pianoff
+Pianoff is a social network for musicians to revolutionize education to a new generation. The aim of this project is to provide immense benefits to students and
 teachers, plus being an excelent platform to find classical music comfortably.
 - Students will be able to get affordable learning/feedback from the best musicians in the world
 - Anyone can become teacher, with a flexible schedule, and with the possibility to have passive income.
