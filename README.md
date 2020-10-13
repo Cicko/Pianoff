@@ -23,16 +23,16 @@ Students will be able to:
  - 
 
 ## Cool resources
-### For design
- - [3D menu flip for mobile](https://dribbble.com/shots/4773637-3D-flip-menu)
- - 
+### Data
+ - https://classic-online.ru
+ - http://pianosyllabus.com/
  
  
  ## TODO
-  - Find designer (or try to design it by myself)
   - Design a market strategy
   - Have a presentational website (promotional video + newsletters registration)
   - Finish implementation of a functional prototype with mock data. (Only backend should be missing and some extra features)
+  - Prepare #12 (PIA-12) - Section to allow eveyone to contribute (has to be safe too, and validated later)
  
          
          
