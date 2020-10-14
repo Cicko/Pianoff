@@ -3,11 +3,14 @@
  * Created on 28.09.20 - 13:35
  **/
 import * as React from 'react'
-import { Input, Menu } from 'semantic-ui-react';
+import { Input, Menu, Image } from 'semantic-ui-react';
+import AvatarEditor from 'react-avatar-editor'
 import { MenuItemProps } from 'semantic-ui-react/dist/commonjs/collections/Menu/MenuItem';
 import { IMenuItem } from './HeaderMenuConfig'
 import pages from '../../../../pages'
 import TranslationManager from '../../../../lib/services/TranslationManager/TranslationManager';
+import LogoImg from '../../../../assets/images/ruda-made/logo.png'
+import ProfilePic from '../../../../assets/images/ruda-made/profile-ruda.png'
 
 export interface HeaderMenuProps {
     activeItem: string

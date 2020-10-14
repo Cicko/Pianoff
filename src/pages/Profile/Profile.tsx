@@ -24,7 +24,7 @@ const Profile: React.FC<ProfileProps> = () => {
                 subscription={null}
                 calendar={null}
             />
-            <VideosContainer videos={Array.from({ length: 200 })} />
+            <VideosContainer data={Array.from({ length: 10 })} loading={false} error={null}/>
         </div>
     )
 }

@@ -35,7 +35,7 @@ const ProfileHeaderContainer: React.FC<ProfileHeaderContainerProps> = (props: Pr
         </GridColumn>
     )
 
-    return <Segment raised>
+    return <Segment>
         <Grid>
             {ImageContainer}
             <GridColumn width={12}>

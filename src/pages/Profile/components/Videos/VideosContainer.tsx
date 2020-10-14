@@ -3,7 +3,7 @@
  * Created on 04.10.20 - 11:07
  **/
 import * as React from 'react'
-import { Grid, Header, Image, Loader, Segment, Message } from 'semantic-ui-react'
+import { Grid, Header, Image, Loader, Segment, Message, Dimmer } from 'semantic-ui-react'
 
 export interface VideoInterface {
 
@@ -20,7 +20,9 @@ const VideosContainer: React.FC<VideosContainerProps> = (props: VideosContainerP
 
     return (
         <Segment>
-            <Loader loading={loading}/>
+            <Dimmer active={loading}>
+                <Loader />
+            </Dimmer>
             <Header>VIDEOS</Header>
             <Grid relaxed columns={4}>
                 {data.map(el =>

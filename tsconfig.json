@@ -5,6 +5,10 @@
         "outDir": "./build/",
         "removeComments": true,
         "sourceMap": true,
-        "target": "es5"
+        "target": "es5",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./src/lib/typings"
+        ]
     }
 }
