@@ -7,5 +7,7 @@
   "pages.discover": "Discover",
   "common.settings": "Settings",
   "common.logout": "Logout",
-  "calendar.available": "Available"
+  "calendar.available": "Available",
+  "button.Accept": "Accept",
+  "dropdown.requestUser.button.viewAll": "View All Friend Requests parse"
 }

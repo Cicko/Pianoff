@@ -5,7 +5,7 @@
 import { get } from 'lodash'
 import * as React from 'react'
 
-interface ITranslationManager {
+export interface ITranslationManager {
     t: (lang: string) => (key: string) => string
     Context: React.Context<object>
 }

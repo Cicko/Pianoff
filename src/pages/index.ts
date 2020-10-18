@@ -14,6 +14,7 @@ export interface IPages {
     Component: React.FC<any>
     route: string
     hideFromHeader?: boolean // Don't show this element in the Header's menu
+    active?: boolean         // Is the current page
 }
 
 /**
@@ -29,6 +30,7 @@ const pages: Array<IPages> = [
     {
         title: 'pages.profile',
         route: '/profile',
+        active: true,
         Component: Profile
     },
     {

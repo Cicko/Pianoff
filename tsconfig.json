@@ -6,9 +6,14 @@
         "removeComments": true,
         "sourceMap": true,
         "target": "es5",
+        "declaration": true,
         "typeRoots": [
             "./node_modules/@types",
-            "./src/lib/typings"
-        ]
+            "./src/lib/@types"
+        ],
+        "baseUrl": "./src/",
+        "paths": {
+            "@services": ["lib/services"]
+        }
     }
 }
