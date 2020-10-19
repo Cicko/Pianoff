@@ -9,5 +9,8 @@
   "common.logout": "Logout",
   "calendar.available": "Available",
   "button.Accept": "Accept",
-  "dropdown.requestUser.button.viewAll": "View All Friend Requests parse"
+  "dropdown.requestUser.button.viewAll": "View All Friend Requests parse",
+  "dropdown.account.profile": "Profile",
+  "dropdown.account.settings": "Settings",
+  "dropdown.account.logout": "Logout"
 }

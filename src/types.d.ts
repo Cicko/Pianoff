@@ -14,6 +14,11 @@ declare module "pianoff" {
             url: string
         }
 
+        interface AccountMenuProps {
+            label: string;
+            route: string;
+        }
+
     }
 
 }

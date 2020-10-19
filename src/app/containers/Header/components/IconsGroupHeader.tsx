@@ -9,10 +9,11 @@ import RequestUserDropdown from './Dropdowns/RequestUserDropdown/RequestUserDrop
 export interface DropdownsIconsGroupProps {
     openDropdown: string
     onSwitchDropdown: (dropdownName: string) => MouseEventHandler
+    dropdownId: string
 }
 
-const DropdownsIconsGroup: React.FC<DropdownsIconsGroupProps> = (props: DropdownsIconsGroupProps) => {
-    const { openDropdown, onSwitchDropdown } = props
+const IconsGroupHeader: React.FC<DropdownsIconsGroupProps> = (props: DropdownsIconsGroupProps) => {
+    const { openDropdown, onSwitchDropdown, dropdownId } = props
 
     const isDropdownVisible = (name: string) => name === openDropdown
 
@@ -25,9 +26,9 @@ const DropdownsIconsGroup: React.FC<DropdownsIconsGroupProps> = (props: Dropdown
             </li>
             <li className="dropdown">
                 <a className="icon-set dropdown-toggle-no-caret" role="button"
-                   data-toggle="dropdown" aria-expanded="false" onClick={onSwitchDropdown('UserRequest')}>
+                   data-toggle="dropdown" aria-expanded="false" onClick={onSwitchDropdown(dropdownId)}>
                     <i className="fas fa-user-plus"></i>
-                    <RequestUserDropdown users={[{ name: 'pepe ', imgSrc: null, url: null }]} visible={isDropdownVisible('UserRequest')}/>
+                    <RequestUserDropdown users={[{ name: 'pepe ', imgSrc: null, url: null }]} visible={isDropdownVisible(dropdownId)}/>
                 </a>
             </li>
             <li className="dropdown">
@@ -46,4 +47,4 @@ const DropdownsIconsGroup: React.FC<DropdownsIconsGroupProps> = (props: Dropdown
     )
 }
 
-export default DropdownsIconsGroup
+export default IconsGroupHeader
