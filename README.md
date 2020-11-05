@@ -20,7 +20,7 @@ Students will be able to:
  - Receive a top quality learning content by their favourite subscribed teacher
  - Receive notifications from their subscribed accounts
  - Publish videos/learning progresses to receive feedback from teachers, or even to simply have a well organized repertoire portfolio
- - 
+ - Find and compare different interpretations of specific pieces 
 
 ## Cool resources
 ### Data
