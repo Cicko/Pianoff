@@ -9,7 +9,7 @@ import Settings from './Settings/Settings'
  * Optionally you can hide the Header and the footer.
  */
 
-export interface IPages {
+export interface IPage {
     title: string,
     Component: React.FC<any>
     route: string
@@ -20,7 +20,7 @@ export interface IPages {
 /**
  * This array also defines the Header's menu items
  */
-const pages: Array<IPages> = [
+const pages: Array<IPage> = [
     {
         title: 'pages.home',
         route: '/home',

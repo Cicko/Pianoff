@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useRouter } from '../../../lib/utils/hooks';
 import { IMenuItem } from './components/HeaderMenuConfig';
-import pages from '../../../pages';
+import pages, { IPage } from '../../../pages';
 import { IconsGroupHeader, AccountHeader, PagesHeader, LogoHeader } from './components';
 import { DropdownContext, DropdownContextInterface } from './components/Dropdowns/DropdownContext'
 
@@ -14,7 +14,8 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     // const activeItem = props.activeItem || 'home' // TODO: activeItem modification should modify redux store so the body adapts.
     const router = useRouter()
 
-    const onMenuItemClick = (item: IMenuItem) => () =>  {
+    const onMenuItemClick = (item: IMenuItem | IPage) => (e: React.MouseEvent<HTMLElement, MouseEvent>) =>  {
+        e.preventDefault()
         router.push(item.route)
     }
 
@@ -34,7 +35,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                     <div className="col-lg-12 col-md-12 col-sm-12">
                         <nav className="navbar navbar-expand-lg navbar-light bg-dark1 justify-content-sm-start">
                             <LogoHeader/>
-                            <PagesHeader pages={pages}/>
+                            <PagesHeader pages={pages} onPageClick={onMenuItemClick}/>
                             {AddContentButton}
                             <DropdownContext.Provider value={dropdownStore}>
                                 <IconsGroupHeader dropdownId="IconsGroup"/>

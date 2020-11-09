@@ -3,16 +3,17 @@
  * Created on 19.10.20 - 17:57
  **/
 import * as React from 'react'
-import { IPages } from '../../../../pages';
+import { IPage } from '../../../../pages';
 import { useTranslation } from '../../../../lib/hooks';
 
 export interface PagesHeaderProps {
-    pages: Array<IPages>
+    pages: Array<IPage>
+    onPageClick: (IPage) => (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
 }
 
 const PagesHeader: React.FC<PagesHeaderProps> = (props: PagesHeaderProps) => {
     const t = useTranslation()
-    const { pages } = props
+    const { pages, onPageClick } = props
 
     return (
         <div
@@ -21,7 +22,7 @@ const PagesHeader: React.FC<PagesHeaderProps> = (props: PagesHeaderProps) => {
             <ul className="navbar-nav align-self-stretch" style={{ maxHeight: 799 }}>
                 {pages.filter(page => !page.hideFromHeader).map(page => (
                     <li className={`nav-item ${page.active ? 'active' : ''}`} >
-                        <a className="nav-link" href={page.route}>{t(page.title)}</a>
+                        <a className="nav-link" onClick={onPageClick(page)}>{t(page.title)}</a>
                     </li>
                 ))}
             </ul>

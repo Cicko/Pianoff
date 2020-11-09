@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { Container } from 'semantic-ui-react';
-import pages, { IPages } from '../../../pages'
+import pages, { IPage } from '../../../pages'
 
 export interface BodyProps {
 
@@ -9,7 +9,7 @@ export interface BodyProps {
 
 const Body: React.FC<BodyProps> = (props: BodyProps) => {
 
-    const PagesSwitcher = (pages as Array<IPages>).map(page => {
+    const PagesSwitcher = (pages as Array<IPage>).map(page => {
         const { Component, route } = page
 
         return (
