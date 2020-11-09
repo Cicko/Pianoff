@@ -25,6 +25,8 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
         }
     }
 
+    const AddContentButton = <a href="add_new_event.html" className="add-event d-none d-lg-block">Add Content</a>
+
     return (
         <header>
             <div className="container">
@@ -33,6 +35,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                         <nav className="navbar navbar-expand-lg navbar-light bg-dark1 justify-content-sm-start">
                             <LogoHeader/>
                             <PagesHeader pages={pages}/>
+                            {AddContentButton}
                             <DropdownContext.Provider value={dropdownStore}>
                                 <IconsGroupHeader dropdownId="IconsGroup"/>
                                 <AccountHeader  dropdownId="ProfilePic"/>

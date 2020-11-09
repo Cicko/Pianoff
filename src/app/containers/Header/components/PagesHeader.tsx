@@ -25,7 +25,6 @@ const PagesHeader: React.FC<PagesHeaderProps> = (props: PagesHeaderProps) => {
                     </li>
                 ))}
             </ul>
-            <a href="add_new_event.html" className="add-event">Add Content</a>
         </div>
     )
 }
