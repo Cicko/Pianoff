@@ -4,7 +4,7 @@
  **/
 
 import AccountHeader from './AccountHeader';
-import IconsGroupHeader from './IconsGroupHeader'
+import IconsGroupHeader from './IconsGroupHeader/IconsGroupHeader'
 import PagesHeader from './PagesHeader';
 import LogoHeader from './LogoHeader';
 

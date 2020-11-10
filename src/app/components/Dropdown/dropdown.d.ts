@@ -7,14 +7,8 @@ declare namespace Dropdown {
 
     interface DropdownProps {
         id: string
-        visible?: boolean
-        data?: Array<IDropdownData>
+        data?: Array<any>
         renderItem?: (IDropdownData) => any
-    }
-
-    interface IDropdownData {
-        route: string
-        title: string
     }
 }
 

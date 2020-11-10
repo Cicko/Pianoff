@@ -1,4 +1,5 @@
 import { IMenuItem } from './header';
+import { RequestUserDropdown } from '../components/Dropdowns';
 
 
 /**
@@ -26,14 +27,35 @@ import { IMenuItem } from './header';
  *
 **/
 
+export const UserRequestConfig = {
+    dropdown: {
+        id: 'user-request',
+        async: true,
+        dataRoute: '/user-requests', // OR redux route such 'async.dropdown.userRequest'
+    },
+}
 
 
-export const IconGroupHeaderItems = [
+export const IconsGroupHeaderItems = [
     {
-        id: 'account',
+        id: 'search',
+        icon: 'fa-search',
     },
     {
         id: 'user-request',
+        icon: 'fa-user-plus',
+        dropdownConfig: UserRequestConfig.dropdown,
+        DropdownComponent: RequestUserDropdown
+    },
+    {
+        id: 'messages',
+        icon: 'fa-envelope',
+        dropdown: true,
+    },
+    {
+        id: 'notifications',
+        icon: 'fa-bell',
+        dropdown: true,
     }
 ]
 

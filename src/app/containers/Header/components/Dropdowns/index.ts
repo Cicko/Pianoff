@@ -4,7 +4,7 @@
  **/
 
 import AccountDropdown from './AccountDropdown/AccountDropdown';
-import RequestUserDropdown from './RequestUserDropdown/RequestUserDropdown';
+import RequestUserDropdown from '../IconsGroupHeader/Dropdowns/RequestUserDropdown';
 
 export {
     AccountDropdown,

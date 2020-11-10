@@ -1,15 +1,28 @@
 import * as React from 'react'
-import * as classNames from 'classnames'
-import { Dropdown } from 'pianoff'
-import { TranslationManager } from '../../../../../../lib/services'
-
+import { AsyncDropdown, Dropdown } from 'app/components'
+import { useTranslation } from '../../../../../../lib/hooks';
+import { UserRequestConfig } from '../../../config/header.config';
 
 export interface RequestUserDropdownInterface {
-    users: Array<Dropdown.RequestUserDropdownProps>
-    visible: boolean
+
 }
 
 const RequestUserDropdown: React.FC<RequestUserDropdownInterface> = (props: RequestUserDropdownInterface) => {
+    const t = useTranslation()
+
+    const renderUserRequest = ({ name, imgSrc, route}) => (
+        <div className="request-users" >
+            <div className="user-request-dt">
+                <a href={route}><img src={imgSrc} alt=""/></a>
+                <a href="#" className="user-title">{name}</a>
+            </div>
+            <button className="accept-btn">{t('button.Accept')}</button>
+        </div>
+    )
+
+    return <AsyncDropdown {...UserRequestConfig.dropdown} renderItem={renderUserRequest}/>
+
+    /*
     const t = React.useContext(TranslationManager.Context) as Function
     const { users, visible } = props
     const dropdownClassNames = classNames(
@@ -43,6 +56,8 @@ const RequestUserDropdown: React.FC<RequestUserDropdownInterface> = (props: Requ
             {ViewAllFriendsButton}
         </div>
     )
+
+     */
 }
 
 export default RequestUserDropdown

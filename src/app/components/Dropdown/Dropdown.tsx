@@ -5,7 +5,7 @@
 import * as React from 'react'
 import * as classNames from 'classnames'
 import { DropdownProps } from './dropdown';
-import { useDropdown } from 'lib/hooks';
+import { useDropdown, useTranslation } from 'lib/hooks';
 
 /**
  * Dropdown component.
