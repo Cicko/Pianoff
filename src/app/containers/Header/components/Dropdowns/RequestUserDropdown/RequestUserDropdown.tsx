@@ -4,7 +4,6 @@ import { Dropdown } from 'pianoff'
 import { TranslationManager } from '../../../../../../lib/services'
 
 
-
 export interface RequestUserDropdownInterface {
     users: Array<Dropdown.RequestUserDropdownProps>
     visible: boolean

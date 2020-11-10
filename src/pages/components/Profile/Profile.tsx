@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Header, Divider } from 'semantic-ui-react'
 import VideosContainer from './components/Videos/VideosContainer';
 import ProfileHeaderContainer from './components/ProfileHeader/ProfileHeaderContainer';
-import { TranslationManager } from '../../lib/services';
+import { TranslationManager } from 'lib/services';
 
 export interface ProfileProps {
 

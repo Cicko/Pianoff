@@ -8,10 +8,8 @@ import { Dispatch } from 'react';
  **/
 
 export interface DropdownContextInterface {
-    dropdown: {
-        openDropdown: string,
-        setOpenDropdown: Dispatch<SetStateAction<string>>
-    }
+    openDropdown: string,
+    setOpenDropdown: Dispatch<SetStateAction<string>>
 }
 
 export const DropdownContext: React.Context<DropdownContextInterface> = React.createContext(null)

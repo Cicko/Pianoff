@@ -1,53 +1,18 @@
 /**
  * File created by Rudolf Cicko (@cicko)
- * Created on 19.10.20 - 17:22
+ * Created on 10.11.20 - 10:33
  **/
 import * as React from 'react'
-import * as classNames from 'classnames'
-import { Dropdown } from 'pianoff'
-import { TranslationManager } from '../../../../../../lib/services'
+import Dropdown from 'app/components/Dropdown/Dropdown';
+import { AccountHeaderConfig } from '../../../config/header.config';
 
+const AccountDropdown: React.FC = () => {
 
-
-export interface ProfileDropdownProps {
-    visible: boolean
-}
-
-const AccountDropdown: React.FC<ProfileDropdownProps> = (props: ProfileDropdownProps) => {
-    const t = React.useContext(TranslationManager.Context) as Function
-    const { visible } = props
-    const dropdownClassNames = classNames(
-        "dropdown-menu",
-        "account-dropdown",
-        "dropdown-menu-right",
-        { "show": visible }
+    const renderAccountMenuItem = ({ title, route }) => (
+        <a key={title} className="link-item" href={route}>{title}</a>
     )
 
-    const accountMenuItems: Array<Dropdown.AccountMenuProps> = [
-        {
-            label: t('dropdown.account.profile'),
-            route: '/profile'
-        },
-        {
-            label: t('dropdown.account.settings'),
-            route: '/settings'
-        },
-        {
-            label: t('dropdown.account.logout'),
-            route: '/logout'
-        }
-    ]
-
-    const renderAccountMenuItem = ({ label, route }) => (
-        <a key={label} className="link-item" href={route}>{label}</a>
-    )
-
-
-    return (
-        <div className={dropdownClassNames}>
-            {accountMenuItems.map(renderAccountMenuItem)}
-        </div>
-    )
+    return <Dropdown {...AccountHeaderConfig.dropdown} renderItem={renderAccountMenuItem}/>
 }
 
 export default AccountDropdown

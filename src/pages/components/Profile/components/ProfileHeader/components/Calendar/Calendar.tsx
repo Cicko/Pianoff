@@ -5,7 +5,7 @@
 import * as React from 'react'
 import { Event, Calendar as BigCalendar, momentLocalizer } from 'react-big-calendar'
 import * as moment from 'moment'
-import { TranslationManager } from '../../../../../../lib/services';
+import { TranslationManager } from 'lib/services';
 
 const localizer = momentLocalizer(moment)
 

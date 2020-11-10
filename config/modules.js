@@ -5,6 +5,7 @@ const path = require('path');
 const paths = require('./paths');
 const chalk = require('react-dev-utils/chalk');
 const resolve = require('resolve');
+const pianoffModules = require('./pianoff_modules')
 
 /**
  * Get additional module paths based on the baseUrl of a compilerOptions object.
@@ -135,6 +136,7 @@ function getModules() {
     webpackAliases: getWebpackAliases(options),
     jestAliases: getJestAliases(options),
     hasTsConfig,
+    pianoffAliases: pianoffModules,
   };
 }
 

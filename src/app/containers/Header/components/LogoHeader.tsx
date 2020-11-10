@@ -4,7 +4,7 @@
  **/
 import * as React from 'react'
 import { Image } from 'semantic-ui-react';
-import LogoImg from '../../../../assets/images/ruda-made/logo.png';
+import LogoImg from 'assets/images/ruda-made/logo.png';
 
 export interface LogoHeaderProps {
 

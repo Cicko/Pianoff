@@ -1,8 +1,8 @@
-import Home from './Home/Home'
-import Profile from './Profile/Profile'
-import Discover from './Discover/Discover'
-import Blog from './Blog/Blog'
-import Settings from './Settings/Settings'
+import Home from './components/Home/Home'
+import Profile from './components/Profile/Profile'
+import Discover from './components/Discover/Discover'
+import Blog from './components/Blog/Blog'
+import Settings from './components/Settings/Settings'
 import { IRedirectableItem } from 'lib/@types'
 
 /**

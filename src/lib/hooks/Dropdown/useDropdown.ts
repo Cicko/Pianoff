@@ -3,7 +3,8 @@
  * Created on 23.10.20 - 23:02
  **/
 import * as React from 'react'
-import { DropdownContext, DropdownContextInterface } from '../../../app/containers/Header/components/Dropdowns/DropdownContext';
+import { DropdownContext, DropdownContextInterface } from 'app/containers/Header/components/Dropdowns/DropdownContext';
+import * as Dropdown from '../../../app/components/Dropdown/dropdown';
 
 export interface UseDropdownProps {
     dropdownId: string
@@ -19,19 +20,20 @@ class ContextMissingError implements Error {
     name: string;
 }
 
-const useDropdown = (props: UseDropdownProps) => {
-    const { dropdown } = React.useContext<DropdownContextInterface>(DropdownContext)
-    const { dropdownId } = props
+const useDropdown = (id: string) => {
+    const { openDropdown, setOpenDropdown } = React.useContext<DropdownContextInterface>(DropdownContext)
 
-    if (!dropdown) {
-        throw new ContextMissingError('DropdownContext', 'useDropdown')
+    if (!setOpenDropdown && !openDropdown) {
+        throw new ContextMissingError('DropdownContext', 'useDropdown.ts')
     }
 
-    const onSwitchDropdown = () => dropdown.setOpenDropdown(dropdown.openDropdown !== dropdownId ? dropdownId : '')
+    const onSwitchDropdown = () => setOpenDropdown(openDropdown !== id ? id : '')
 
-    const isDropdownVisible = dropdownId === dropdown.openDropdown
+    const hideDropdown = () => setOpenDropdown('')
 
-    return { isDropdownVisible, onSwitchDropdown }
+    const isDropdownVisible = id === openDropdown
+
+    return { isDropdownVisible, onSwitchDropdown, hideDropdown }
 }
 
 export default useDropdown

@@ -13,7 +13,7 @@
         ],
         "baseUrl": "./src/",
         "paths": {
-            "@services": ["lib/services"]
+            "@services": ["lib/services"],
         }
     }
 }
