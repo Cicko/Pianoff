@@ -3,16 +3,16 @@ import Profile from './Profile/Profile'
 import Discover from './Discover/Discover'
 import Blog from './Blog/Blog'
 import Settings from './Settings/Settings'
+import { IRedirectableItem } from 'lib/@types'
 
 /**
  * Pages are what is contained inside the Body container.
  * Optionally you can hide the Header and the footer.
  */
 
-export interface IPage {
+export interface IPage extends IRedirectableItem {
     title: string,
     Component: React.FC<any>
-    route: string
     hideFromHeader?: boolean // Don't show this element in the Header's menu
     active?: boolean         // Is the current page
 }

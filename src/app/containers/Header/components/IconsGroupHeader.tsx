@@ -4,7 +4,7 @@
  **/
 import * as React from 'react'
 import RequestUserDropdown from './Dropdowns/RequestUserDropdown/RequestUserDropdown';
-import useDropdown from './Dropdowns/useDropdown';
+import useDropdown from '../../../../lib/hooks/Dropdown/useDropdown';
 
 export interface DropdownsIconsGroupProps {
     dropdownId: string
@@ -16,28 +16,28 @@ const IconsGroupHeader: React.FC<DropdownsIconsGroupProps> = (props: DropdownsIc
     return (
         <ul className="group-icons">
             <li>
-                <a href="search_result.html" className="icon-set">
+                <div className="icon-set" role="button">
                     <i className="fas fa-search"/>
-                </a>
+                </div>
             </li>
             <li className="dropdown">
-                <a className="icon-set dropdown-toggle-no-caret" role="button"
+                <div className="icon-set dropdown-toggle-no-caret" role="button"
                    data-toggle="dropdown" aria-expanded="false" onClick={onSwitchDropdown}>
                     <i className="fas fa-user-plus"/>
                     <RequestUserDropdown users={[{ name: 'pepe ', imgSrc: null, url: null }]} visible={isDropdownVisible}/>
-                </a>
+                </div>
             </li>
             <li className="dropdown">
-                <a href="#" className="icon-set dropdown-toggle-no-caret" role="button"
+                <div className="icon-set dropdown-toggle-no-caret" role="button"
                    data-toggle="dropdown">
                     <i className="fas fa-envelope"/>
-                </a>
+                </div>
             </li>
             <li className="dropdown">
-                <a href="#" className="icon-set dropdown-toggle-no-caret" role="button"
+                <div className="icon-set dropdown-toggle-no-caret" role="button"
                    data-toggle="dropdown" aria-expanded="false">
                     <i className="fas fa-bell"/>
-                </a>
+                </div>
             </li>
         </ul>
     )

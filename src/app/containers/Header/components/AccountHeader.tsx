@@ -6,9 +6,8 @@
 import { Image } from 'semantic-ui-react';
 import ProfilePic from '../../../../assets/images/ruda-made/profile-ruda.png';
 import * as React from 'react';
-import { MouseEventHandler } from 'react';
 import { AccountDropdown } from './Dropdowns';
-import useDropdown from './Dropdowns/useDropdown';
+import useDropdown from '../../../../lib/hooks/Dropdown/useDropdown';
 
 export interface AccountHeaderProps {
     dropdownId: string
@@ -20,10 +19,10 @@ const AccountHeader: React.FC<AccountHeaderProps> = (props: AccountHeaderProps) 
 
     return (
         <div className="account order-1 dropdown">
-            <a href="#" className="account-link dropdown-toggle-no-caret" role="button"
+            <div className="account-link dropdown-toggle-no-caret" role="button"
                data-toggle="dropdown">
                 <div className="user-dp"><Image src={ProfilePic} onClick={onSwitchDropdown}/></div>
-            </a>
+            </div>
             <div className="dropdown-menu account-dropdown dropdown-menu-right show">
                 <AccountDropdown visible={isDropdownVisible}/>
             </div>

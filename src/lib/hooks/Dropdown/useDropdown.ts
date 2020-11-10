@@ -3,7 +3,7 @@
  * Created on 23.10.20 - 23:02
  **/
 import * as React from 'react'
-import { DropdownContext, DropdownContextInterface } from './DropdownContext';
+import { DropdownContext, DropdownContextInterface } from '../../../app/containers/Header/components/Dropdowns/DropdownContext';
 
 export interface UseDropdownProps {
     dropdownId: string
@@ -17,7 +17,6 @@ class ContextMissingError implements Error {
 
     message: string;
     name: string;
-
 }
 
 const useDropdown = (props: UseDropdownProps) => {

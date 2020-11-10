@@ -3,13 +3,14 @@
  * Created on 28.09.20 - 13:07
  **/
 
+import { IRedirectableItem } from 'lib/@types';
+
 /**
  *  IDEAS
  *   - Competitions
  *   - Discover
  */
 
-export interface IMenuItem {
+export interface IMenuItem extends IRedirectableItem {
     title?: string,
-    route: string
 }

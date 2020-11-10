@@ -3,7 +3,8 @@ import { useRouter } from '../../../lib/utils/hooks';
 import { IMenuItem } from './components/HeaderMenuConfig';
 import pages, { IPage } from '../../../pages';
 import { IconsGroupHeader, AccountHeader, PagesHeader, LogoHeader } from './components';
-import { DropdownContext, DropdownContextInterface } from './components/Dropdowns/DropdownContext'
+import { DropdownContext } from './components/Dropdowns/DropdownContext'
+import { IRedirectableItem } from 'lib/@types';
 
 export interface HeaderProps {
     activeItem: string
@@ -11,10 +12,9 @@ export interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     const [openDropdown, setOpenDropdown] = React.useState('')
-    // const activeItem = props.activeItem || 'home' // TODO: activeItem modification should modify redux store so the body adapts.
     const router = useRouter()
 
-    const onMenuItemClick = (item: IMenuItem | IPage) => (e: React.MouseEvent<HTMLElement, MouseEvent>) =>  {
+    const onMenuItemClick = (item: IRedirectableItem) => (e: React.MouseEvent<HTMLElement, MouseEvent>) =>  {
         e.preventDefault()
         router.push(item.route)
     }
@@ -42,7 +42,6 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                                 <AccountHeader  dropdownId="ProfilePic"/>
                             </DropdownContext.Provider>
                         </nav>
-                        <div className="overlay"></div>
                     </div>
                 </div>
             </div>
